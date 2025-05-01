@@ -15,23 +15,29 @@ import Skills from "@/components/Skills";
 
 const queryClient = new QueryClient();
 
+const AppContent = () => {
+  return (
+    <Routes>
+      <Route path="/" element={<Index />} />
+      <Route path="/about" element={<About />} />
+      <Route path="/portfolio" element={<Portfolio />} />
+      <Route path="/contact" element={<Contact />} />
+      <Route path="/footer" element={<Footer />} />
+      <Route path="/hero" element={<Hero />} />
+      <Route path="/navbar" element={<Navbar />} />
+      <Route path="/skills" element={<Skills />} />
+      <Route path="*" element={<NotFound />} />
+    </Routes>
+  );
+};
+
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
       <Toaster />
       <Sonner />
       <BrowserRouter basename="/daportfolio">
-        <Routes>
-          <Route path="/" element={<Index />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/portfolio" element={<Portfolio />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/footer" element={<Footer />} />
-          <Route path="/hero" element={<Hero />} />
-          <Route path="/navbar" element={<Navbar />} />
-          <Route path="/skills" element={<Skills />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
+        <AppContent />
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
