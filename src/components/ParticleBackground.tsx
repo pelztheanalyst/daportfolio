@@ -37,7 +37,7 @@ const ParticleBackground = () => {
           },
           move: {
             enable: true,
-            speed: 1.5,
+            speed: 1,
           },
           size: {
             value: 2,
